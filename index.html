@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVHomeRun - Stream HDHomeRun DVR Content Everywhere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📺 TVHomeRun</h1>
+            <p class="tagline">Stream your HDHomeRun DVR content on all your devices</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>About the Project</h2>
+            <p>
+                TVHomeRun is a complete ecosystem for accessing and streaming recorded content from your
+                <strong>HDHomeRun DVR devices</strong>. It consists of a powerful backend server that
+                automatically discovers your DVR devices and converts recordings to streaming-ready formats,
+                plus native applications for all your devices.
+            </p>
+            <p>
+                With TVHomeRun, you can browse your recorded shows, resume playback where you left off,
+                and enjoy your content on Apple TV, iPhone, iPad, or any web browser.
+            </p>
+        </section>
+
+        <section class="projects">
+            <h2>Project Components</h2>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">🖥️</div>
+                    <h3>Backend Server</h3>
+                    <p>
+                        Node.js server that discovers HDHomeRun devices, provides REST APIs, converts
+                        recordings to HLS format, and maintains a SQLite database of your content.
+                    </p>
+                    <div class="features">
+                        <span class="tag">Auto-discovery</span>
+                        <span class="tag">HLS Proxy</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <a href="https://github.com/anders94/tvhomerun-backend" class="btn">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📱</div>
+                    <h3>iOS App</h3>
+                    <p>
+                        Native SwiftUI application for iPhone and iPad with touch-optimized interface,
+                        grid browsing, video playback with resume support, and progress tracking.
+                    </p>
+                    <div class="features">
+                        <span class="tag">SwiftUI</span>
+                        <span class="tag">iOS 15+</span>
+                        <span class="tag">Resume Playback</span>
+                        <span class="tag">Touch UI</span>
+                    </div>
+                    <a href="https://github.com/anders94/tvhomerun-ios" class="btn">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📺</div>
+                    <h3>tvOS App</h3>
+                    <p>
+                        Apple TV application built with SwiftUI, featuring a custom video player with
+                        quick skip controls, remote-optimized navigation, and seamless episode transitions.
+                    </p>
+                    <div class="features">
+                        <span class="tag">SwiftUI</span>
+                        <span class="tag">tvOS 15+</span>
+                        <span class="tag">Remote Control</span>
+                        <span class="tag">Auto-play</span>
+                    </div>
+                    <a href="https://github.com/anders94/tvhomerun-tvos" class="btn">View on GitHub →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <h3>Web Interface</h3>
+                    <p>
+                        Modern web application with responsive design for desktop, tablet, and mobile.
+                        Features HLS streaming, keyboard shortcuts, and a tvOS-inspired dark theme.
+                    </p>
+                    <div class="features">
+                        <span class="tag">Vanilla JS</span>
+                        <span class="tag">Bootstrap 5</span>
+                        <span class="tag">HLS.js</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <a href="https://github.com/anders94/tvhomerun-web" class="btn">View on GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="setup">
+            <h2>Example Setup</h2>
+
+            <div class="setup-diagram">
+                <div class="setup-step">
+                    <div class="step-number">1</div>
+                    <h4>HDHomeRun DVR</h4>
+                    <p>Your HDHomeRun device with DVR subscription recording content on your local network.</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="setup-step">
+                    <div class="step-number">2</div>
+                    <h4>Backend Server</h4>
+                    <p>Node.js server running on your network (e.g., Raspberry Pi, NAS, or PC).</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="setup-step">
+                    <div class="step-number">3</div>
+                    <h4>Your Devices</h4>
+                    <p>Access content from Apple TV, iPhone, iPad, or web browser.</p>
+                </div>
+            </div>
+
+            <div class="setup-guide">
+                <h3>Quick Start Guide</h3>
+
+                <div class="step-section">
+                    <h4>Step 1: Set Up the Backend Server</h4>
+                    <div class="code-block">
+                        <pre># Clone the backend repository
+git clone https://github.com/anders94/tvhomerun-backend.git
+cd tvhomerun-backend
+
+# Install dependencies
+npm install
+
+# Start the server (default port 3000)
+npm start</pre>
+                    </div>
+                    <p class="note">
+                        <strong>Requirements:</strong> Node.js v14+ and at least one HDHomeRun device
+                        with DVR on your local network.
+                    </p>
+                    <p class="note">
+                        The server will automatically discover your HDHomeRun devices and sync content
+                        every hour. Access the API at <code>http://your-server-ip:3000</code>
+                    </p>
+                </div>
+
+                <div class="step-section">
+                    <h4>Step 2: Choose Your Client Application</h4>
+
+                    <div class="client-options">
+                        <div class="client-option">
+                            <h5>📺 Apple TV (tvOS)</h5>
+                            <ol>
+                                <li>Clone <code>tvhomerun-tvos</code> repository</li>
+                                <li>Open in Xcode 14.0+</li>
+                                <li>Build and run on your Apple TV</li>
+                                <li>Configure server URL on first launch</li>
+                            </ol>
+                        </div>
+
+                        <div class="client-option">
+                            <h5>📱 iPhone/iPad (iOS)</h5>
+                            <ol>
+                                <li>Clone <code>tvhomerun-ios</code> repository</li>
+                                <li>Open in Xcode 14.0+</li>
+                                <li>Build and install on your device</li>
+                                <li>Enter server URL in settings</li>
+                            </ol>
+                        </div>
+
+                        <div class="client-option">
+                            <h5>🌐 Web Browser</h5>
+                            <ol>
+                                <li>Clone <code>tvhomerun-web</code> repository</li>
+                                <li>Run <code>npm install</code></li>
+                                <li>Start with <code>npm start</code></li>
+                                <li>Access at <code>http://localhost:8080</code></li>
+                            </ol>
+                            <p class="note">
+                                Or configure backend URL: <code>npm start -- --backend http://server-ip:3000</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-section">
+                    <h4>Step 3: Start Streaming!</h4>
+                    <ul>
+                        <li>Browse your recorded shows with thumbnails and metadata</li>
+                        <li>Select any episode to start playback</li>
+                        <li>Progress is automatically saved across all devices</li>
+                        <li>Episodes auto-play when one finishes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-overview">
+            <h2>Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="feature-icon">🔍</span>
+                    <div>
+                        <h4>Automatic Discovery</h4>
+                        <p>Backend automatically finds HDHomeRun devices using UDP broadcast and network scanning</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">▶️</span>
+                    <div>
+                        <h4>Resume Playback</h4>
+                        <p>Pick up exactly where you left off on any device</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <div>
+                        <h4>Progress Tracking</h4>
+                        <p>Visual indicators show what you've watched and what's new</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎬</span>
+                    <div>
+                        <h4>HLS Streaming</h4>
+                        <p>Native HLS format for smooth playback on Apple devices and browsers</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔄</span>
+                    <div>
+                        <h4>Auto-sync</h4>
+                        <p>Content syncs every hour to keep your library up to date</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💾</span>
+                    <div>
+                        <h4>Offline Database</h4>
+                        <p>SQLite database enables browsing even when devices are offline</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="architecture">
+            <h2>System Architecture</h2>
+            <div class="arch-diagram">
+                <div class="arch-box">
+                    <h4>HDHomeRun DVR</h4>
+                    <p>Network device with recorded content</p>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-box highlight">
+                    <h4>TVHomeRun Backend</h4>
+                    <p>Node.js + Express + SQLite</p>
+                    <ul>
+                        <li>Device Discovery</li>
+                        <li>Content Indexing</li>
+                        <li>HLS Transcoding</li>
+                        <li>REST API Server</li>
+                    </ul>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-row">
+                    <div class="arch-box">
+                        <h4>tvOS App</h4>
+                        <p>SwiftUI + AVKit</p>
+                    </div>
+                    <div class="arch-box">
+                        <h4>iOS App</h4>
+                        <p>SwiftUI + AVKit</p>
+                    </div>
+                    <div class="arch-box">
+                        <h4>Web App</h4>
+                        <p>JavaScript + HLS.js</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <h2>Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Backend</h4>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>SQLite</li>
+                        <li>UDP/HTTP Protocols</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4>Apple Apps</h4>
+                    <ul>
+                        <li>Swift 5.7+</li>
+                        <li>SwiftUI</li>
+                        <li>AVKit/AVFoundation</li>
+                        <li>Combine</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4>Web App</h4>
+                    <ul>
+                        <li>Vanilla JavaScript</li>
+                        <li>Bootstrap 5</li>
+                        <li>HLS.js</li>
+                        <li>Express.js</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="contribute">
+            <h2>Contributing</h2>
+            <p>
+                TVHomeRun is an open-source project. Contributions, bug reports, and feature requests
+                are welcome on any of the repositories!
+            </p>
+            <div class="repo-links">
+                <a href="https://github.com/anders94/tvhomerun-backend" class="repo-link">Backend →</a>
+                <a href="https://github.com/anders94/tvhomerun-ios" class="repo-link">iOS →</a>
+                <a href="https://github.com/anders94/tvhomerun-tvos" class="repo-link">tvOS →</a>
+                <a href="https://github.com/anders94/tvhomerun-web" class="repo-link">Web →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Built with ❤️ for HDHomeRun users |
+                <a href="https://github.com/anders94">GitHub @anders94</a>
+            </p>
+            <p class="license">Licensed under ISC</p>
+        </div>
+    </footer>
+</body>
+</html>
