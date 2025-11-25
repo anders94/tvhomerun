@@ -18,8 +18,8 @@
         <section class="intro">
             <h2>About the Project</h2>
             <p>
-                TVHomeRun is a complete ecosystem for accessing and streaming recorded content from your
-                <strong>HDHomeRun DVR devices</strong>. It consists of a powerful backend server that
+                TVHomeRun is a family of apps for accessing and streaming recorded content from your
+                <strong>HDHomeRun DVR devices</strong>. It consists of a backend server that
                 automatically discovers your DVR devices and converts recordings to streaming-ready formats,
                 plus native applications for all your devices.
             </p>
@@ -97,6 +97,37 @@
                     <a href="https://github.com/anders94/tvhomerun-web" class="btn">View on GitHub →</a>
                 </div>
             </div>
+        </section>
+
+        <section class="background">
+            <h2>Background</h2>
+            <p>
+              I've found few interfaces as inscrutable as the native HDHomeRun applications, both for iPhone
+	      and AppleTV. Beyond my troubles finding and doing what I want, the video delay when you skip
+	      forward and backward in time to get around commercials (probably one of the most common things
+	      you do) leaves much to be desired. After skipping, you'll get the audio fairly quickly but the
+	      video takes a second or two to catch up. Not the end of the world but it makes me pine for the
+	      days of the legendary TiVo responsivness where you can instantly blast both forward and backward
+	      through your recordings with impunity. I've seen Apple products do this though, just not with
+	      the native HDHomeRun or related apps.
+            </p>
+            <p>
+	      It turns out mobile devices (Apple's in particular) use HLS for streaming which is highly
+	      optimized for scrubbing quickly. Hence, I vibe coded TVHomeRun which includes a server to
+	      convert HDHomeRun DVR shows into HLS streams and a suite of applications to consume them.
+	      Currently, you'll find iPhone, AppleTV and web versions.
+            </p>
+            <p>
+	      Because HDHomeRun devices don't directly create HLS streams, a proxy server is used to transcode
+	      recorded episodes from an HDHomeRun DVR and serve them to clients as HLS streams. Several API
+	      endpoints provide show and episode listings as well as tools to update watch progress. The
+	      HDHomeRun device is always used as the source of truth for recordings and storing watch progress.
+            </p>
+            <p>
+	      The result is a set of Apple compatible apps that strive for TiVo-like video responsivness. At
+	      the moment, the applications are only for viewing programs saved in the DVR but live TV
+	      interaction is possible in a future version.
+            </p>
         </section>
 
         <section class="setup">
